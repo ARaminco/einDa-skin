@@ -1,9 +1,23 @@
 |?TREE=&raquo; <a class=tree href="/CMD_FILE_MANAGER">`LANG_FILEMANAGER`</a> &raquo; <a class=tree href="/CMD_FILE_MANAGER`path`">`path`</a>|
 |?HELP_SECTION=`USER_HELPER`/filemanager.html#edit|
 |HTM_USER_TOP|
-
-<script language="Javascript">
+<script language="Javascript" type="text/javascript" src="http://afagh.info/edit_area/edit_area_full.js"></script>
+<meta charset="utf-8">
+	<script language="Javascript" type="text/javascript">
 <!--
+		// initialisation
+		editAreaLoader.init({
+			id: "text"	// id of the textarea to transform		
+			,start_highlight: true	// if start with highlight
+			,allow_resize: "both"
+			,allow_toggle: true
+			,word_wrap: true
+			,language: "en"
+			,toolbar: "search, go_to_line, |, undo, redo, |, select_font, |, syntax_selection, |, change_smooth_selection"
+			,syntax_selection_allow: "php,css,html,sql,xml,js"	
+			,syntax: "php"	
+		});
+
 
 var preview=0;
 var save=1;
@@ -48,8 +62,7 @@ function askSaveIt()
 					<form name=info action='/CMD_FILE_MANAGER' method='POST'>
 						<input type=hidden name=action value="edit">
 						<input type=hidden name=path value="|path|">
-						<tr><td class=list align=center><textarea class="code_edit" name=text rows=24 cols=120 wrap=off>
-							|TEXT|</textarea></td></tr>
+						<tr><td class=list align=center><textarea class="code_edit" name=text id=text rows=24 cols=120 wrap=off>|TEXT|</textarea></td></tr>
 							<tr><td class=list align=center><input type=button value="|LANG_PREVIEW|" onClick="javascript:showPreview(document.info.text);"></td></tr>
 							<tr><td class=listtitle align=right><input type=submit onClick="save=0;" value="|LANG_SAVE_AS|"><input type=text name=filename value="|FILENAME|"> <input type=button value="|LANG_CANCEL|" onClick="if (confirm('|LANG_DISCARD|')) {save=0; location.href='/CMD_FILE_MANAGER|path|';}"></td ></tr >
 					</form>
