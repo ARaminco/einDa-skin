@@ -1,4 +1,4 @@
-einDa-skin
+SuperAdmin >> based on einDa-skin 
 ==========
 
 Mobile-First skin to Directadmin CP.
